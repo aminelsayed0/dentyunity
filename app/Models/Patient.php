@@ -17,7 +17,7 @@ class Patient extends Model
     {
         return $this->hasMany(DescribedCase::class, 'patient_id', 'id');
     }
-    public function UnDescribedCase()
+    public function unDescribedCase()
     {
         return $this->HasMany(UnDescribedCase::class, 'patient_id', 'id');
     }

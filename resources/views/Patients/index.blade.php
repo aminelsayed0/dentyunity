@@ -34,9 +34,15 @@
                             <td>{{ $patient->name }}</td>
                             <td>{{ $patient->address }}</td>
                             <td>{{ $patient->phone }}</td>
-                            <td>{{ $patient->doctor_id }}</td>
-                            <td><img width="50px" src="{{ asset('storage/' . $patient->image) }}"
-                                    class="img-fluid rounded-top" alt=""></td>
+
+                            <td>{{$patient->doctor_id ? $patient->doctor->UserName : "-"}}</td>
+                            <td>
+                                @if ($data = $patient->describedCase()->first())
+                                <img width="50px" src="{{ asset('storage/' . $data->image) }}"
+                                class="img-fluid rounded-top" alt="">
+                                @endif
+
+                                </td>
                             <td>{{ $patient->created_at }}</td>
                             <td>{{ $patient->updated_at }}</td>
                             <td>

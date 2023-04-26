@@ -58,6 +58,7 @@ class PatientController extends Controller
         Storage::disk('public')->put('patients', $request->image);
         $described->image = $request->file('image')->store('patients');
         $patient->save();
+        $described->patient_id = $patient->id;
         $described->save();
 
         return redirect()->route('patients.index')->with('message','patient add');
