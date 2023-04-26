@@ -52,6 +52,13 @@
                     </div>
                 </div>
                 <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="image" class="form-label">image</label>
+                        <input type="file" class="form-control" name="image" id="image" placeholder="image"
+                            aria-describedby="fileHelpId">
+                    </div>
+                </div>
+                <div class="col-md-6">
                     <div class="d-flex justify-content-center mt-4">
                         <div><button type="submit" class="btn btn-lg btn-primary">Save</button></div>
                     </div>

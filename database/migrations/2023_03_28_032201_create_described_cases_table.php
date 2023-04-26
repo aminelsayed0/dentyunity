@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('described_cases', function (Blueprint $table) {
             $table->id();
-            $table->string('image'); //path
+            $table->string('image')->nullable(); //path
             $table->text('diagnosis');
             $table->foreignID('patient_id')->nullable()->onDelete('cascade')->constrained('patients');
             $table->timestamps();
