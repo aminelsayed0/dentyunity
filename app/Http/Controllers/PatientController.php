@@ -86,7 +86,7 @@ class PatientController extends Controller
      */
     public function edit($id)
     {
-        //
+       return view("patients.edit");
     }
 
     /**
@@ -98,7 +98,15 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required|string|max:200',
+            'age'=>'required|numeric',
+           'phone'=>'required|numeric|min:10',
+           'address'=>'required|string|max:200',
+           'diagnosis'=>'required|string|',
+           'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+        ]);
+        
     }
 
     /**
